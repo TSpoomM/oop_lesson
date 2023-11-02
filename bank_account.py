@@ -21,8 +21,8 @@ class AccountDB:
                 return account
         return None
 
-    def delete_account(self):
-        print(f"Deleting account {self.account_number}")
+    def delete_account(self, account):
+        return self.account_database.remove(account)
 
     def __str__(self):
         s = ''
@@ -67,4 +67,6 @@ print(my_account_DB)
 my_account_DB.search_public("0003").withdraw(100)
 print(my_account_DB)
 my_account_DB.search_public("0010").deposit(50)
+print(my_account_DB)
+my_account_DB.delete_account(account1)
 print(my_account_DB)
